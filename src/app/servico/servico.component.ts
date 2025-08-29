@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import {MediaMatcher} from '@angular/cdk/layout';
+import {ChangeDetectorRef} from '@angular/core';
+interface Transaction {
+  item: string;
+  cost: number;
+}
 
 @Component({
   selector: 'app-servico',
@@ -7,9 +13,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicoComponent implements OnInit {
 
-  constructor() { }
+  
+
+  mobileQuery: MediaQueryList;
+
+  fillerNav = Array.from({length: 5}, (_, i) => `Nav Item ${i + 1}`);
+
+ 
+  private _mobileQueryListener: () => void;
+
+  constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
+    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+    this._mobileQueryListener = () => changeDetectorRef.detectChanges();
+    this.mobileQuery.addListener(this._mobileQueryListener);
+   }
+   
 
   ngOnInit(): void {
   }
+  displayedColumns: string[] = ['item', 'cost'];
+  transactions: Transaction[] = [
+    {item: 'Beach ball', cost: 4},
+    {item: 'Towel', cost: 5},
+    {item: 'Frisbee', cost: 2},
+    {item: 'Sunscreen', cost: 4},
+    {item: 'Cooler', cost: 25},
+    {item: 'Swim suit', cost: 15},
+  ];
+
+  /** Gets the total cost of all transactions. */
+  getTotalCost() {
+    return this.transactions.map(t => t.cost).reduce((acc, value) => acc + value, 0);
+  }
+
+  
 
 }
