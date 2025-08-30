@@ -20,6 +20,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatTableModule} from '@angular/material/table';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatSlideToggleModule,
     MatDatepickerModule,
     MatTableModule,
-    MatGridListModule
+    MatGridListModule,
+    MatRadioModule
     
 
     

@@ -30,7 +30,7 @@ h1.example-app-name {
   flex: 1 0 auto;
 }
 table {
-  width: 50%;
+  width: 100%;
 }
 
 tr.mat-footer-row {
@@ -38,30 +38,34 @@ tr.mat-footer-row {
 }
 mat-grid-list {
   display: flex;
-    margin-top: 50px;
-    width: 750px;
-    height: 30px;
-    overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  margin-top: 50px;
+  width: 750px;
+  // height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+
 mat-grid-tile {
- 
-   
-    overflow: hidden;
-    transition: flex 0.5s ease-in-out;
-    cursor: pointer;
+
+
+  overflow: hidden;
+  transition: flex 0.5s ease-in-out;
+  cursor: pointer;
 }
+
 mat-grid-tile img {
-    width: 150%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(70%) contrast(90%);
-    transition: filter 0.5s ease-in-out;
+  width: 150%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(70%) contrast(90%);
+  transition: filter 0.5s ease-in-out;
 }
+
 mat-grid-tile:hover {
-    flex: 3;
+  flex: 3;
 }
+
 mat-grid-tile:hover img {
-    filter: none;
+  filter: none;
 }
