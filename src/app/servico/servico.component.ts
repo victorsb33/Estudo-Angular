@@ -16,12 +16,12 @@ export class ServicoComponent implements OnDestroy {
 
   displayedColumns: string[] = ['item', 'cost'];
   transactions: Transaction[] = [
-    {item: 'Beach ball', cost: 4},
-    {item: 'Towel', cost: 5},
-    {item: 'Frisbee', cost: 2},
-    {item: 'Sunscreen', cost: 4},
-    {item: 'Cooler', cost: 25},
-    {item: 'Swim suit', cost: 15},
+    {item: 'Corte Degrade', cost: 35},
+    {item: 'Corte Social', cost: 30},
+    {item: 'Barba', cost: 25},
+    {item: 'Corte e Barba', cost: 55},
+    {item: 'sombrancelha', cost: 15},
+    
   ];
 
   /** Gets the total cost of all transactions. */
